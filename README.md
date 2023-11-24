@@ -1,4 +1,4 @@
-# Sprint Web Development/ Front-End Design - Challenge
+# GLOBAL SOLUTION Web Development/ Front-End Design
 
 - Anny Carolina: 98295-1ESPH 
 
