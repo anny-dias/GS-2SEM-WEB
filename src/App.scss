@@ -1,0 +1,544 @@
+
+@import "./variavel";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./assets/imagem-fundo.png);
+}
+
+.container {
+    .conteudo-home {
+
+        .conteudo-home-imagem {
+            .titulo-home {
+                font-family: 'Oswald', sans-serif;
+                text-align:right;
+                font-size: 90px;
+                margin-right: 90px;
+                font-weight: bold;
+                color: #4e7aff;
+
+            }
+
+        }
+
+    .titulo-home-texto {
+        font-family: 'Lato', sans-serif;
+        text-align: right;
+        font-size: 25px;
+        margin-right: 150px;
+        margin-top: 40px;
+        color: #139fb4;
+        text-align: center;
+        margin-left: 900px
+    }
+
+    .conteudo-home-texto {
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        justify-content: right;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .texto-home {
+            font-family: 'Lato', sans-serif;
+            font-size: 25px;
+            display: flex;
+            text-align: center;
+            justify-content: right;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px;
+            margin-left: 750px;
+            color: #03113b;
+            
+        }
+    }
+
+    
+    .botoes {
+        display: flex;
+        padding: 10px;
+        margin-top: 30px;
+        justify-content: right;
+        margin-left: 900px;
+        margin-right: 450px;
+
+        .botaoHome {
+            margin-right: 15px;
+            background-color: #139fb4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            box-shadow: 5px 5px 4px 0px $box-color;
+        }
+    }
+    }
+
+    .FormularioLogin {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+        .TituloLogin {
+            text-align: center;
+            font-family: $legenda;
+            padding: 20px;
+        }
+
+        label{
+            padding:10px
+        }
+
+        input{
+            height: 30px;
+            padding:5px;
+        }
+
+        #loginCadastro{
+            color: $cor-legenda;
+            padding: 10px;
+            border:none;
+            width: 100px;
+            background-color: #F085F2;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+
+        .emailLogin {
+            padding: 10px;
+            text-align: center;
+            font-family: $legenda;
+        }
+
+        .nomeCadastro {
+            padding: 10px;
+            text-align: center;
+            font-family: $legenda;
+        }
+
+        .senhaLogin {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .FormularioLogin-p {
+            font-family: 'Inika', sans-serif;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .FormularioLogin-a {
+            text-decoration: none;
+            color: #F1BEFF;
+        }
+    }
+
+
+
+    .copy-footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 20px;
+        color: #03113b;
+    }
+
+    .FormularioLogin-form {
+        font-family: 'Lato', sans-serif;
+        background-color:#4e7aff;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+        padding: 30px;
+        color:#03113b;
+        
+
+        .FormularioLogin {
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+            .TituloLogin {
+                text-align: center;
+                font-family: 'Lato', sans-serif;
+                padding: 20px;
+            }
+
+            .emailLogin {
+                padding: 10px;
+                text-align: center;
+                font-family: 'Lato', sans-serif;
+            }
+
+            .senhaLogin {
+                font-family: 'Lato', sans-serif;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .FormularioLogin-p {
+                font-family: 'Lato', sans-serif;
+                text-align: center;
+                padding: 20px;
+
+                .FormularioLogin-a {
+                    font-family: 'Lato', sans-serif;
+                    text-decoration: none;
+                    color: #8880ff;
+                }
+            }
+
+            #enviarDuvida {
+                color: rgb(0, 0, 0);
+                padding: 15px;
+                margin-top: 20px;
+                background-color: #4f447e;
+                border-radius: 10px;
+
+            }
+
+        }
+    }
+
+
+    .legenda-formulario {
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .NavBarLogin {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        .Item-NavL {
+            font-family: $legenda;
+            color: $texto-padrao;
+            font-weight: 400;
+            font-size: 18px;
+            padding-right: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    }
+
+    .NavBar {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        .NavBar-logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 180px;
+
+        }
+
+        .NavBar-item {
+            justify-content: flex-end;
+            margin-right: 30px;
+
+
+
+            .Item-Nav {
+                font-family: 'Lato', sans-serif;
+                color:#03113b;
+                font-size: 30px;
+                padding: 24px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .Item-Nav:hover {
+                color:#139fb4;
+            }
+
+
+        }
+    }
+
+    .conteudo-projetos {
+
+
+        .titulo-projetos {
+            font-family: 'Oswald', sans-serif;
+            text-align: right;
+            color: #213780;
+            font-size: 35px;
+            margin-right: 90px;
+            font-weight: bold;
+            margin-left: 500px;
+
+        }
+
+        .conteudo-projetos-texto {
+            display: flex;
+            flex-direction: row;
+            align-items:end;
+            justify-content: space-around;
+            padding: 24px;
+
+            .texto-projetos {
+                font-family:'Lato', sans-serif;
+                font-size: 28px;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                text-align: right;
+                margin-left: 470px;
+                color: #03113b;
+
+            }
+        }
+
+       
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        .NavBarLogin {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+
+            .Item-NavL {
+                font-weight: 400;
+                font-size: 20px;
+                padding-right: 20px;
+            }
+
+        }
+
+        .NavBar {
+
+
+            .NavBar-logo {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                height: 180px;
+            }
+
+            .NavBar-item {
+                justify-content: flex-end;
+
+
+                .Item-Nav {
+                    font-weight: 400;
+                    font-size: 20px;
+                    padding: 24px;
+                }
+
+            }
+        }
+
+        .conteudo-home {
+            .imagem-home {
+                button {
+                    top: 30%;
+                }
+
+                h1 {
+                    top: 40%;
+                    left: 28%;
+                }
+            }
+        }
+
+        .conteudo-home-imagem {
+            .imagem1-home {
+                height: 350px;
+            }
+        }
+
+        .conteudo-home-texto {
+            img {
+                height: 350px;
+            }
+
+            .texto-home {
+                font-size: 22px;
+            }
+        }
+
+        .conteudo-projetos {
+            .conteudo-projetos-texto {
+                img {
+                    height: 350px;
+                }
+
+                .texto-projetos {
+                    font-size: 22px;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+//Tablet
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+    .container {
+        .NavBarLogin {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+
+            .Item-NavL {
+                font-weight: 400;
+                font-size: 20px;
+                padding-right: 20px;
+            }
+
+        }
+
+        .NavBar {
+
+
+            .NavBar-logo {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                height: 180px;
+
+            }
+
+            .NavBar-item {
+                justify-content: flex-end;
+
+
+                .Item-Nav {
+                    font-weight: 400;
+                    font-size: 20px;
+                    padding: 24px;
+                }
+
+            }
+        }
+
+        .conteudo-home {
+            .imagem-home {
+                button {
+                    top: 40%;
+                }
+
+                h1 {
+                    top: 40%;
+                    left: 25%;
+                }
+            }
+        }
+
+        .conteudo-home-imagem {
+            .imagem1-home {
+                height: 300px;
+            }
+        }
+
+        .conteudo-home-texto {
+            img {
+                height: 300px;
+            }
+
+            .texto-home {
+                font-size: 18px;
+            }
+        }
+
+       
+        
+    }
+}
+
+//Smartphone
+@media screen and (max-width: 500px) {
+.container{
+    .imagem-home{
+        display: none;
+    }
+
+    .NavBar{
+        .NavBar-logo {
+            justify-content: flex-start;
+            height: 120px !important;
+            margin-right: 100px;
+        }
+
+        .NavBar-item{
+           
+           display: flex;
+           width: 10px;
+            
+            .Item-Nav{
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    .conteudo-home-imagem{
+        .titulo-home{
+            font-size: 20px;
+        }
+
+        img{
+            width: 420px;
+        }
+    }
+
+    .titulo-home-texto{
+        font-size: 24px;
+    }
+
+    .conteudo-home-texto{
+        flex-direction: column;
+
+        img{
+            width: 300px;
+        }
+        p{
+            font-size: 20px !important;
+            text-align: justify;
+        }
+    }
+
+   
+            
+        
+    
+    .form{
+        width: 300px;
+
+        #duvida{
+            width: 240px;
+        }
+    }
+}}
