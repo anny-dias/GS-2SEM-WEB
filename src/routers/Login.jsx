@@ -1,76 +1,57 @@
-import { useState } from "react";
+import { useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router';
 
-function FormularioLogin() {
-  const [email1, setEmail] = useState('');
+
+function Login() {
+  
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleSenhaChange = (event) => {
-    setSenha(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-  
+  const handleSubmit = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/users', {
-        params: {
-          email: email1,
-          senha: senha,
-        },
-      });
-  
-      const user = response.data.find((user) => user.email === email1 && user.senha === senha);
-  
-      if (user) {
-        // Limpar os campos do formulário
-        setEmail('');
-        setSenha('');
-        toast.success('Login bem-sucedido!');
-        console.log('Login bem-sucedido!', user);
-        // Redirecionar o usuário ou executar lógica desejada
+      const response = await axios.get(`http://localhost:3000/usuarios?email=${email}`);
+      const usuario = response.data[0];
+
+      if (usuario && usuario.senha === senha) {
+        // Armazenar dados do usuário na sessionStorage
+        sessionStorage.setItem('usuarioAutenticado', JSON.stringify(usuario));
+        navigate('/home');
       } else {
-        toast.error('Credenciais inválidas. Verifique seu email e senha.');
-        console.log('Credenciais inválidas!');
+        setErro('Dados Incorretos! Insira novamente.');
       }
     } catch (error) {
-      toast.error('Erro ao fazer login. Tente novamente mais tarde.');
-      console.error('Erro ao fazer login:', error);
+      console.error('Erro ao realizar o login:', error);
+      setErro('Erro ao realizar o login. Tente novamente mais tarde.');
     }
   };
 
+
+
   return (
-    <>
-      <div className='container'>
-        <div className="FormularioLogin">
-          <form className="FormularioLogin-form" onSubmit={handleSubmit}>
-            <h1 className="TituloLogin">LOGIN</h1>
-            <div className="emailLogin">
-              <label htmlFor="email1">Email:</label>
-              <input type="email" id="emaillogin" placeholder="Insira seu email" value={email1} onChange={handleEmailChange} required />
-            </div>
-            <div className="senhaLogin">
-              <label htmlFor="senha">Senha:</label>
-              <input type="password" id="senha" value={senha} onChange={handleSenhaChange} placeholder="Insira a senha" required />
-            </div>
-            <p className="FormularioLogin-p">Esqueceu a senha? <a className="FormularioLogin-a" href="#">Clique aqui!</a></p>
-
-            <center><input className="FormularioLogin-botao" type="submit" value="Enviar" id='loginCadastro' required/></center>
-
-          </form>
-        </div>
-
-        <p className="legenda-formulario">Não possui cadastro? <a href="Cadastro">Cadastre-se clicando aqui!</a></p>
+    <center>
+      <div className='formularioLogin'>
+        <form className='form'>
+          <h1>LOGIN</h1>
+          <div className='usuarioLogin'>
+            <label>Usuário:</label>
+            <input type="text" value={email} name='email' onChange={(e) => setEmail(e.target.value)} placeholder='Insira o Usuário' />
+          </div>
+          <br />
+          <div className="senhaLogin">
+            <label>Senha:</label>
+            <input type="password" value={senha} name='senha' onChange={(e) => setSenha(e.target.value)} placeholder='Insira a Senha' />
+          </div>
+          <br />
+          <button type='button' className='botaoLogin' onClick={handleSubmit}>Entrar</button>
+          {erro && <div style={{ color: 'red' }}>{erro}</div>}
+        </form>
       </div>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
-    </>
+    </center>
   );
+
 }
 
-export default FormularioLogin;
+export default Login
