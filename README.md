@@ -18,6 +18,11 @@
     Aproveite o site dando o comando npm run dev
 </ul>
 
+## Login
+Para logar:
+- Usuário: Admin
+- Senha: 123
+
 ## Copyright
 
 ATENÇÃO: O programa deve ser utilizado EXCLUSIVAMENTE como forma de estudos para aqueles que baixarem sem serem as desenvolvedoras. <br>
